@@ -1,0 +1,20 @@
+<li [ngClass]="{'list-group-item': true, 
+'list-group-item-success': getClassItem() === 'success',
+'list-group-item-danger': getClassItem() === 'danger'}">
+    <div class="row">
+<h2 class="col-md-9">
+{{post.title}}
+</h2>
+<div class="col-md-3">
+   Posté le {{post.created_at | date : 'd/MM/y'}}
+</div>
+</div>
+<div>
+ {{post.content}}
+</div>
+<br>
+<button class="btn btn-success" (click)="ajouterLoveIt()">Like it</button>
+&nbsp;
+<button class="btn btn-danger" (click)="ajouterDontLoveIt()">Don't like it</button>
+
+</li>
